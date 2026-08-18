@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # AcquireBase
 
 This is a Flutter marketplace app I built for discovering and publishing digital products — startups, SaaS tools, AI apps, mobile apps, that sort of thing. Think of it as a small Product Hunt-style demo.
@@ -230,3 +231,6 @@ Some paginated queries need composite indexes. If you hit an index error, create
 ## A note on scope
 
 This is a college/demo project, so I intentionally kept some things simple: client-side search, no dedicated error-tracking service, and no production-scale search backend. For a real launch you'd probably want Algolia, proper logging, more integration tests, and a stricter rules review.
+=======
+# AcqiureBase
+>>>>>>> 5b67c2c37bb659ac6604ed1acd20af16f0fa0a60
