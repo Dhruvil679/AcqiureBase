@@ -1,0 +1,49 @@
+{
+  "project_info": {
+    "project_number": "914607382752",
+    "firebase_url": "https://saas-management-du664-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "saas-management-du664",
+    "storage_bucket": "saas-management-du664.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:914607382752:android:594fa6b8d5e01916fbf085",
+        "android_client_info": {
+          "package_name": "com.example.acquirebase"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDyUkPBltYk0tGg8X62bCCOCvuCTnjRVGg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:914607382752:android:348626b1b382c542fbf085",
+        "android_client_info": {
+          "package_name": "com.example.project_screen"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDyUkPBltYk0tGg8X62bCCOCvuCTnjRVGg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

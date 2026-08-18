@@ -1,0 +1,250 @@
+# AcquireBase — Project Summary
+
+**Generated:** 2026-08-02
+**Location:** `D:\Marketplace\acquirebase`
+**Type:** Flutter mobile marketplace app for digital products (startups, SaaS, AI tools, web/mobile apps, etc.).
+**Purpose:** College / demo project with a Firebase-shaped backend.
+
+---
+
+## 1. Overview
+
+AcquireBase is a cross-platform Flutter application that lets users:
+
+- Browse and discover digital products and startups.
+- Save projects to a personal list.
+- Publish their own projects with media (logo, screenshots, documents).
+- Manage their profile and social links.
+- Moderate content and manage users via an admin panel.
+
+The app is architected around Firebase services and uses Riverpod for state management. It is designed to run and demo on the free Firebase Spark plan, with optional Cloud Functions for enhanced security and server-side logic.
+
+---
+
+## 2. Features
+
+### User-facing
+- Email/password authentication with email verification.
+- Browse approved projects by category.
+- Featured project carousel.
+- Search projects by name/tagline.
+- Save/unsave projects.
+- Publish projects with logo, screenshots, and documents.
+- Edit profile, avatar, bio, and social links.
+- Dashboard showing the user's own projects and recent activity.
+- Notifications when a project is approved/rejected/removed.
+
+### Admin
+- Admin overview with stats.
+- Moderation queue (approve, reject, feature, remove, restore projects).
+- User management (suspend, activate, promote, demote, delete).
+- Audit log of admin actions.
+- CSV export of audit log.
+
+---
+
+## 3. Tech Stack
+
+| Layer | Technology |
+|-------|-----------|
+| Framework | Flutter 3.x / Dart |
+| State Management | flutter_riverpod |
+| Backend | Firebase |
+| Auth | Firebase Authentication |
+| Database | Cloud Firestore |
+| File Storage | Firebase Storage |
+| Server Logic | Firebase Cloud Functions (TypeScript v2) |
+| App Attestation | Firebase App Check (Android Play Integrity) |
+
+---
+
+## 4. Project Structure
+
+```
+acquirebase/
+├── android/                  # Android platform files
+├── ios/                      # iOS platform files (not configured for Firebase)
+├── lib/
+│   ├── core/
+│   │   ├── models/           # User, Project, AuditLog, ActivityLog, Notification
+│   │   ├── providers/        # Riverpod providers for repos and services
+│   │   ├── services/         # Repositories, StorageService, callable-function services
+│   │   ├── theme/            # AppTheme (Material 3, GoogleSans)
+│   │   ├── utils/            # Formatters, timestamp parsing, CSV export
+│   │   └── widgets/          # Reusable widgets (CachedImage, dialogs, etc.)
+│   ├── features/
+│   │   ├── auth/             # Login, register, forgot password
+│   │   ├── dashboard/        # User dashboard
+│   │   ├── explore/          # Explore feed
+│   │   ├── saved/            # Saved projects list
+│   │   ├── profile/          # Profile, edit profile, notifications
+│   │   ├── projects/         # Project detail, add/edit project
+│   │   └── admin/            # Admin panel, moderation, users
+│   ├── firebase_options.dart # Android + Web Firebase options
+│   └── main.dart             # App entry point
+├── functions/                # Firebase Cloud Functions (TypeScript)
+│   ├── src/index.ts          # Callable functions
+│   ├── package.json
+│   └── tsconfig.json
+├── scripts/                  # Admin scripts
+│   ├── seed_firestore.ts     # Seeds demo users/projects into Firestore
+│   ├── package.json
+│   ├── tsconfig.json
+│   └── README.md
+├── .firebaserc               # Default Firebase project alias
+├── firebase.json             # Hosting, functions, storage, Firestore config
+├── firestore.rules           # Firestore security rules
+├── firestore.indexes.json    # Required composite indexes
+├── storage.rules             # Firebase Storage security rules
+└── README.md                 # Setup, deployment, and architecture docs
+```
+
+---
+
+## 5. Current Implementation Status
+
+### ✅ Fully Implemented
+
+1. **Complete UI surface** for both user and admin flows.
+2. **Material 3 theme** with GoogleSans font and light/dark support.
+3. **Firebase Authentication** for registration, login, forgot password, and email verification.
+4. **Firestore-backed repositories** with automatic mock fallback:
+   - `ProjectRepository`
+   - `SavedProjectRepository`
+   - `UserRepository`
+   - `AuditLogRepository`
+   - `ActivityLogRepository`
+   - `NotificationRepository`
+5. **Admin panel** wired to Firestore with overview, moderation, users, and audit log.
+6. **Real media uploads** via `StorageService`:
+   - User avatars
+   - Project logos
+   - Project screenshots
+   - Project documents
+7. **Image caching** using `cached_network_image` across the app.
+8. **Activity logging** and **project edit history**.
+9. **Security rules** for Firestore and Storage.
+10. **Cloud Functions** written and compiling:
+    - `setAdminClaim`
+    - `setUserSuspension`
+    - `deleteUserAccount`
+    - `checkProjectSubmissionRate`
+    - `recordProjectSubmission`
+    - `incrementProjectView`
+    - `logAuditEntry`
+11. **Dart callable-function services** wired into the UI.
+12. **Graceful fallbacks** for non-admin callable functions when functions are not deployed.
+13. **Firestore seed script** to populate demo users and projects.
+14. **Firebase Hosting config** added to `firebase.json`.
+15. **Paginated Firestore queries** for explore feed, moderation, and user lists.
+16. **`flutter analyze` clean pass** — no issues.
+17. **Comprehensive README** with setup, seed, hosting, and deployment instructions.
+
+### ⚠️ Requires Firebase Console / CLI Actions
+
+| Task | Status | Notes |
+|------|--------|-------|
+| Enable Firebase Storage | Not done | Works on Spark plan; `storage.rules` ready to deploy. |
+| Deploy Storage rules | Not done | Run `firebase deploy --only storage:rules`. |
+| Deploy Firestore rules | Not done | Run `firebase deploy --only firestore:rules`. |
+| Seed Firestore demo data | Not done | Run `cd scripts && npm run seed`. |
+| Deploy Firebase Hosting | Not done | Config committed; run `firebase deploy --only hosting`. |
+| Deploy Cloud Functions | Not done | Requires Blaze plan upgrade. |
+| Enable Play Integrity | Not done | Optional; App Check catches failure gracefully. |
+| iOS Firebase setup | Skipped | Not required for this project. |
+
+### ⚠️ Known Limitations Without Cloud Functions
+
+- Admin actions (promote/demote, suspend/activate, delete user) will fail because Firestore rules block direct client writes to sensitive fields.
+- Project submission rate-limiting is disabled.
+- View-count increments are disabled.
+
+---
+
+## 6. Quick Start
+
+```bash
+# 1. Install Flutter dependencies
+flutter pub get
+
+# 2. Install function dependencies
+cd functions && npm install
+
+# 3. Install seed-script dependencies
+cd ../scripts && npm install
+
+# 4. Run the app
+flutter run
+```
+
+### Enable Firebase Storage (Spark plan)
+
+```bash
+firebase deploy --only storage:rules
+firebase deploy --only firestore:rules
+```
+
+### Seed Demo Data
+
+```bash
+cd scripts
+npm run seed
+```
+
+### Deploy Web Hosting
+
+```bash
+flutter build web
+firebase deploy --only hosting
+```
+
+### Deploy Cloud Functions (requires Blaze)
+
+```bash
+cd functions
+npm run build
+firebase deploy --only functions
+```
+
+---
+
+## 7. Security & Rules
+
+- **Firestore rules** enforce:
+  - Users can only write their own safe profile fields.
+  - `role`, `isSuspended`, and `uid` are never client-writable.
+  - Only admins can create audit logs and notifications.
+  - Project status, featured flag, save count, and view count are protected.
+- **Storage rules** enforce:
+  - Users can only write their own avatar.
+  - Project media can only be written by the project owner or an admin.
+  - File type and size limits for images (5 MB) and documents (10 MB).
+
+---
+
+## 8. Composite Indexes Required
+
+Create these in the Firebase Console if index errors appear:
+
+- `projects`: `status` ascending, `createdAt` descending
+- `projects`: `category` ascending, `status` ascending, `createdAt` descending
+- `projects`: `ownerId` ascending, `createdAt` descending
+
+---
+
+## 9. Next Recommended Steps
+
+1. Enable Firebase Storage and deploy `storage.rules`.
+2. Deploy `firestore.rules`.
+3. Run the Firestore seed script.
+4. Test project publishing with logo/screenshot/document uploads.
+5. Build and deploy the web app to Firebase Hosting.
+6. When ready, upgrade to Blaze and deploy Cloud Functions for admin actions and server-side counters.
+
+---
+
+## 10. Notes
+
+- The app falls back to in-memory mock data on unconfigured platforms (iOS, Windows, Linux, macOS).
+- `fbs-data.js` at the project root is a scratch file and can be safely deleted.
+- This is a college/demo project; additional hardening is recommended before production use.

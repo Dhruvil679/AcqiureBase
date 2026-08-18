@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>AcquireBase - Project Details</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">tailwind.config = {darkMode: "class", theme: {extend: {colors: {"error-container": "#ffdad6", "on-primary-fixed": "#00164d", "on-secondary-fixed-variant": "#294289", "on-surface": "#191b25", "on-background": "#191b25", "on-secondary-fixed": "#00174c", "surface-container-highest": "#e1e1ef", "surface-tint": "#0051e0", error: "#ba1a1a", "on-secondary": "#ffffff", "on-error": "#ffffff", "surface-container-lowest": "#ffffff", "surface-dim": "#d9d9e6", primary: "#0048c9", "inverse-primary": "#b5c4ff", "surface-variant": "#e1e1ef", "on-primary": "#ffffff", "surface-container-high": "#e7e7f5", "secondary-fixed": "#dbe1ff", "on-tertiary-fixed-variant": "#842500", "tertiary-fixed-dim": "#ffb59e", "primary-fixed": "#dbe1ff", "tertiary-container": "#c53b00", surface: "#fbf8ff", "surface-bright": "#fbf8ff", "surface-container": "#ededfb", "on-surface-variant": "#424656", outline: "#737688", "on-tertiary-container": "#ffeae5", background: "#fbf8ff", "secondary-container": "#99b0ff", "secondary-fixed-dim": "#b4c5ff", "on-secondary-container": "#274188", "on-primary-container": "#eceeff", "on-tertiary": "#ffffff", secondary: "#425ba3", "on-tertiary-fixed": "#3a0b00", "inverse-surface": "#2e303a", "tertiary-fixed": "#ffdbd0", "primary-fixed-dim": "#b5c4ff", "surface-container-low": "#f3f2ff", "primary-container": "#035dfe", "outline-variant": "#c3c5d9", "on-error-container": "#93000a", tertiary: "#9b2d00", "on-primary-fixed-variant": "#003cac", "inverse-on-surface": "#f0effd"}, borderRadius: {DEFAULT: "0.25rem", lg: "0.5rem", xl: "0.75rem", full: "9999px"}, spacing: {"margin-mobile": "16px", "margin-desktop": "32px", "rail-width": "80px", "gutter-desktop": "24px", "drawer-width": "360px", unit: "4px", "gutter-mobile": "16px", "safe-bottom": "env(safe-area-inset-bottom)", "safe-top": "env(safe-area-inset-top)"}, fontFamily: {"label-lg": ["Inter"], "display-lg": ["Inter"], "headline-lg": ["Inter"], "headline-md": ["Inter"], "label-md": ["Inter"], "body-md": ["Inter"], "title-lg": ["Inter"], "body-lg": ["Inter"], "title-md": ["Inter"], "headline-lg-mobile": ["Inter"], headline: ["Inter"], display: ["Inter"], body: ["Inter"], label: ["Inter"]}, fontSize: {"label-lg": ["14px", {lineHeight: "20px", letterSpacing: "0.1px", fontWeight: "500"}], "display-lg": ["57px", {lineHeight: "64px", letterSpacing: "-0.25px", fontWeight: "400"}], "headline-lg": ["32px", {lineHeight: "40px", fontWeight: "400"}], "headline-md": ["28px", {lineHeight: "36px", fontWeight: "400"}], "label-md": ["12px", {lineHeight: "16px", letterSpacing: "0.5px", fontWeight: "500"}], "body-md": ["14px", {lineHeight: "20px", letterSpacing: "0.25px", fontWeight: "400"}], "title-lg": ["22px", {lineHeight: "28px", fontWeight: "500"}], "body-lg": ["16px", {lineHeight: "24px", letterSpacing: "0.5px", fontWeight: "400"}], "title-md": ["16px", {lineHeight: "24px", letterSpacing: "0.15px", fontWeight: "500"}], "headline-lg-mobile": ["28px", {lineHeight: "36px", fontWeight: "400"}]}}}};</script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined.fill {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            -webkit-tap-highlight-color: transparent;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen flex flex-col font-body-md antialiased pt-safe-top pb-safe-bottom">
+<!-- TopAppBar (Modified for Transactional/Details View - Back Button instead of full nav) -->
+<header class="bg-surface dark:bg-surface-dim w-full h-16 sticky top-0 z-50 bg-surface-bright dark:bg-surface-container border-b border-outline-variant flex justify-between items-center px-margin-mobile w-full">
+<div class="flex items-center gap-4">
+<button class="p-2 -ml-2 rounded-full hover:bg-surface-container-high transition-colors active:opacity-80 text-on-surface-variant flex items-center justify-center">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<h1 class="font-title-lg text-title-lg text-primary dark:text-inverse-primary font-bold">Review Listing</h1>
+</div>
+<div class="flex gap-2">
+<button class="p-2 rounded-full hover:bg-surface-container-high transition-colors active:opacity-80 text-on-surface-variant flex items-center justify-center">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-1 flex flex-col gap-6 p-margin-mobile pb-32">
+<!-- Status Banner -->
+<div class="bg-secondary-container text-on-secondary-container rounded-lg p-4 flex items-start gap-3 border border-outline-variant">
+<span class="material-symbols-outlined fill text-secondary mt-0.5">pending_actions</span>
+<div>
+<h3 class="font-label-lg text-label-lg mb-1">Awaiting Moderation</h3>
+<p class="font-body-md text-body-md opacity-80">Submitted by user ID #99281 on Oct 24, 2023. Needs approval before public listing.</p>
+</div>
+</div>
+<!-- Project Info Hero -->
+<section class="flex flex-col gap-4">
+<div class="flex items-center gap-4">
+<div class="w-16 h-16 rounded-xl bg-surface-container-high overflow-hidden shrink-0 border border-surface-variant">
+<img class="w-full h-full object-cover" data-alt="A clean, modern SaaS logo featuring abstract geometric shapes in shades of blue and purple on a white background, highly detailed, crisp, representing a tech startup." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCuaeHMTip9u3zTIE9ZXlF0F82cP7yaaAot49c9XhlP5AN-cPARj5z8IDA3raDN-vPnxmpyAQp0I1MbI0panTwLKZKccPgnjZsXtFCHGAe_moAk4so-s0il2B2U9T9-6fdTWca52rqAIrVWErKsxz3EUn3xBRRLsZaddJXGRutkBhHWh2Tp_WB4S4Z4xMx6Gf1Qezoyzhe0aE3bZzwS-lCTamfDWsUKciy8zlh8XaGXjBoMWoZUOawVRQ"/>
+</div>
+<div>
+<div class="flex items-center gap-2 mb-1">
+<span class="bg-surface-container-high text-on-surface-variant px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider">SaaS</span>
+<span class="bg-surface-container-high text-on-surface-variant px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider">B2B</span>
+</div>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface font-semibold leading-tight">NexusFlow Analytics</h2>
+<a class="font-label-md text-label-md text-primary flex items-center gap-1 mt-1" href="#">nexusflow.app <span class="material-symbols-outlined text-[14px]">open_in_new</span></a>
+</div>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                An AI-driven analytics dashboard that consolidates marketing data from across 50+ platforms into unified, actionable reports for enterprise clients.
+            </p>
+</section>
+<!-- Bento Grid: Marketplace Stats -->
+<section class="grid grid-cols-2 gap-4">
+<!-- Asking Price -->
+<div class="col-span-2 bg-surface-container-low p-4 rounded-xl flex flex-col justify-center items-center text-center border border-surface-variant relative overflow-hidden">
+<div class="absolute inset-0 bg-primary/5"></div>
+<span class="font-label-md text-label-md text-on-surface-variant uppercase tracking-widest relative z-10 mb-1">Asking Price</span>
+<span class="font-headline-md text-headline-md font-bold text-primary relative z-10">$1,450,000</span>
+<span class="font-label-md text-label-md text-on-surface-variant relative z-10 mt-1">4.5x ARR Multiple</span>
+</div>
+<!-- TTM Revenue -->
+<div class="bg-surface-container-low p-4 rounded-xl flex flex-col gap-1">
+<div class="flex items-center gap-2 text-on-surface-variant mb-1">
+<span class="material-symbols-outlined text-[18px]">payments</span>
+<span class="font-label-md text-label-md">TTM Revenue</span>
+</div>
+<span class="font-title-lg text-title-lg font-semibold text-on-surface">$320,400</span>
+<span class="font-label-md text-label-md text-emerald-600 flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">trending_up</span> +12% YoY</span>
+</div>
+<!-- TTM Profit -->
+<div class="bg-surface-container-low p-4 rounded-xl flex flex-col gap-1">
+<div class="flex items-center gap-2 text-on-surface-variant mb-1">
+<span class="material-symbols-outlined text-[18px]">account_balance_wallet</span>
+<span class="font-label-md text-label-md">TTM Profit</span>
+</div>
+<span class="font-title-lg text-title-lg font-semibold text-on-surface">$185,000</span>
+<span class="font-label-md text-label-md text-on-surface-variant">57% Margin</span>
+</div>
+<!-- Users -->
+<div class="bg-surface-container-low p-4 rounded-xl flex flex-col gap-1">
+<div class="flex items-center gap-2 text-on-surface-variant mb-1">
+<span class="material-symbols-outlined text-[18px]">group</span>
+<span class="font-label-md text-label-md">Active Users</span>
+</div>
+<span class="font-title-lg text-title-lg font-semibold text-on-surface">1,240</span>
+<span class="font-label-md text-label-md text-on-surface-variant">Paying Customers</span>
+</div>
+<!-- Tech Stack -->
+<div class="bg-surface-container-low p-4 rounded-xl flex flex-col gap-1">
+<div class="flex items-center gap-2 text-on-surface-variant mb-1">
+<span class="material-symbols-outlined text-[18px]">terminal</span>
+<span class="font-label-md text-label-md">Core Tech</span>
+</div>
+<span class="font-title-lg text-title-lg font-semibold text-on-surface">React, Node</span>
+<span class="font-label-md text-label-md text-on-surface-variant">AWS Hosted</span>
+</div>
+</section>
+<!-- Moderation Checks -->
+<section class="flex flex-col gap-3">
+<h3 class="font-title-md text-title-md font-semibold text-on-surface border-b border-surface-variant pb-2">Automated Checks</h3>
+<div class="flex items-center justify-between p-3 bg-surface-container-lowest rounded-lg border border-surface-variant">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined fill text-emerald-600">check_circle</span>
+<div>
+<div class="font-label-lg text-label-lg text-on-surface">Identity Verification</div>
+<div class="font-body-md text-body-md text-on-surface-variant text-[12px]">Stripe Identity passed</div>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between p-3 bg-surface-container-lowest rounded-lg border border-surface-variant">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined fill text-emerald-600">check_circle</span>
+<div>
+<div class="font-label-lg text-label-lg text-on-surface">Financial Connect</div>
+<div class="font-body-md text-body-md text-on-surface-variant text-[12px]">Plaid linked successfully</div>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between p-3 bg-error-container rounded-lg border border-error/20">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined fill text-error">warning</span>
+<div>
+<div class="font-label-lg text-label-lg text-on-surface">Traffic Anomaly</div>
+<div class="font-body-md text-body-md text-on-surface-variant text-[12px] text-error">Sudden spike in Google Analytics</div>
+</div>
+</div>
+<button class="font-label-md text-label-md text-error underline">View</button>
+</div>
+</section>
+</main>
+<!-- Fixed Bottom Actions for Moderation (Suppressing standard BottomNavBar due to transactional intent) -->
+<div class="fixed bottom-0 left-0 w-full bg-surface dark:bg-inverse-surface border-t border-outline-variant p-margin-mobile pb-safe flex gap-4 z-50 shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.05)]">
+<button class="flex-1 bg-surface-container-high text-on-surface font-label-lg text-label-lg h-12 rounded-lg flex items-center justify-center gap-2 border border-surface-variant active:bg-surface-variant transition-colors">
+<span class="material-symbols-outlined text-[20px]">close</span> Reject
+        </button>
+<button class="flex-1 bg-primary text-on-primary font-label-lg text-label-lg h-12 rounded-lg flex items-center justify-center gap-2 active:opacity-90 transition-opacity">
+<span class="material-symbols-outlined text-[20px]">check</span> Approve
+        </button>
+</div>
+</body></html>
